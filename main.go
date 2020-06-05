@@ -8,9 +8,14 @@ import (
 )
 
 func main() {
+	
+	os.Setenv("GOOGLE_OAUTH_CLIENT_ID", "308872887952-3fgbmida5f4rs5q11v63a5nmgmtv55di.apps.googleusercontent.com")
+	os.Setenv("GOOGLE_OAUTH_CLIENT_SECRET","IxwMhR86rlSmUtRU-OB9eGsI")
+	
+	
 	// We create a simple server using http.Server and run.
 	server := &http.Server{
-		Addr: fmt.Sprintf(":8000"),
+		Addr: fmt.Sprintf(":"+os.os.Getenv("PORT")),
 		Handler: handlers.New(),
 	}
 
